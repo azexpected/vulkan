@@ -47,7 +47,33 @@ VkResult VulkanLayerAndExtension::getInstanceLayerProperties()
 	return result;
 }
 		
-		
+VkResult VulkanLayerAndExtension::getExtensionProperties(LayerProperties &layerProps, VkPhysicalDevice* gpu)
+{
+	uint32_t extensionCount;
+	VkResult result;
+	char* layerName;
+	do {
+		if(gpu)
+		{
+			result = vkEnumerateDeviceExtensionProperties(*gpu, layerName, &extensionCount, NULL);
+		}
+		else
+		{
+			result = vkEnumerateInstanceExtensionProperties(layerName, &extensionCount, NULL);
+		}
 
-	   	   
+		if(result || extensionCount == 0)
+			continue;
 
+		layerProps.extensions.resize(extensionCount);
+		if(gpu)
+		{
+			result = vkEnumerateDeviceExtensionProperties(*gpu, layerName, &extensionCount, layerProps.extensions.data());
+		}
+		else
+		{
+			result = vkEnumerateInstanceExtensionProperties(layerName, &extensionCount, layerProps.extensions.data());
+		}
+	}
+	while(result == VK_INCOMPLETE);
+}
