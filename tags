@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+LayerProperties	VulkanLayerAndExtension.h	/^struct LayerProperties {$/;"	s
+LayerProperties::extensions	VulkanLayerAndExtension.h	/^	std::vector<VkExtensionProperties> extensions;$/;"	m	struct:LayerProperties	access:public
+LayerProperties::properties	VulkanLayerAndExtension.h	/^	VkLayerProperties properties;$/;"	m	struct:LayerProperties	access:public
+VulkanLayerAndExtension	VulkanLayerAndExtension.h	/^class VulkanLayerAndExtension {$/;"	c
+VulkanLayerAndExtension::getDeviceExtensionProperties	VulkanLayerAndExtension.h	/^	VkResult getDeviceExtensionProperties(VKPhysicalDevice *gpu);$/;"	p	class:VulkanLayerAndExtension	access:private	signature:(VKPhysicalDevice *gpu)
+VulkanLayerAndExtension::getExtensionProperties	VulkanLayerAndExtension.h	/^	VkResult getExtensionProperties(LayerProperties &layerProps, VkPhysicalDevice* gpu=NULL);$/;"	p	class:VulkanLayerAndExtension	access:private	signature:(LayerProperties &layerProps, VkPhysicalDevice* gpu=NULL)
+VulkanLayerAndExtension::getInstanceLayerProperties	VulkanLayerAndExtension.cpp	/^VkResult VulkanLayerAndExtension::getInstanceLayerProperties()$/;"	f	class:VulkanLayerAndExtension	signature:()
+VulkanLayerAndExtension::getInstanceLayerProperties	VulkanLayerAndExtension.h	/^	std::vector<LayerProperties> getInstanceLayerProperties();$/;"	p	class:VulkanLayerAndExtension	access:private	signature:()
+extensions	VulkanLayerAndExtension.h	/^	std::vector<VkExtensionProperties> extensions;$/;"	m	struct:LayerProperties	access:public
+getDeviceExtensionProperties	VulkanLayerAndExtension.h	/^	VkResult getDeviceExtensionProperties(VKPhysicalDevice *gpu);$/;"	p	class:VulkanLayerAndExtension	access:private	signature:(VKPhysicalDevice *gpu)
+getExtensionProperties	VulkanLayerAndExtension.h	/^	VkResult getExtensionProperties(LayerProperties &layerProps, VkPhysicalDevice* gpu=NULL);$/;"	p	class:VulkanLayerAndExtension	access:private	signature:(LayerProperties &layerProps, VkPhysicalDevice* gpu=NULL)
+getInstanceLayerProperties	VulkanLayerAndExtension.cpp	/^VkResult VulkanLayerAndExtension::getInstanceLayerProperties()$/;"	f	class:VulkanLayerAndExtension	signature:()
+getInstanceLayerProperties	VulkanLayerAndExtension.h	/^	std::vector<LayerProperties> getInstanceLayerProperties();$/;"	p	class:VulkanLayerAndExtension	access:private	signature:()
+properties	VulkanLayerAndExtension.h	/^	VkLayerProperties properties;$/;"	m	struct:LayerProperties	access:public
