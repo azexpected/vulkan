@@ -7,7 +7,8 @@ VkResult VulkanLayerAndExtension::getInstanceLayerProperties()
 	std::vector<VkLayerProperties> layerProperties;
 	VkResult result;
 	
-	do {
+	do
+	{
 		result = vkEnumerateInstanceLayerProperties(&instanceLayerCount, NULL);
 		if(result)
 			return result;
@@ -46,8 +47,23 @@ VkResult VulkanLayerAndExtension::getInstanceLayerProperties()
 
 	return result;
 }
-		
-		
 
-	   	   
+VkResult VulkanLayerAndExtension::getExtensionProperties(LayerProperties &layerProps, VkPhysicalDevice* gpu)
+{
+	uint32_t extensionCount;
+	VkResult result;
+
+	char* layerName = layerProps.properties.layerName;
+	do
+	{
+		if(gpu)
+		{
+			result = vkEnumerateDeviceExtensionProperties(*gpu, layerName, &extensionCount, NULL);
+		}
+		else 
+		{
+			result = vkEnumerateInstanceExtensionProperties
+		}
+	}
+}
 
